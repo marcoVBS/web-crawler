@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  nginx_crawly:
+    container_name: nginx_crawly
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx:/etc/nginx/templates
+
+  php_crawly:
+    build:
+        context: .
+        dockerfile: docker/app/Dockerfile
+    image: crawly/crawly_php
+    container_name: php_crawly
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - nginx_crawly
