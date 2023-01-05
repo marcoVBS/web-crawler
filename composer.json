@@ -1,0 +1,29 @@
+{
+    "name": "marco/crawly_test",
+    "description": "Crawler desenvolvido como teste técnico para a empresa CRAWLY",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Marco\\CrawlyTest\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marco Belmont"
+        }
+    ],
+    "require": {
+        "symfony/dom-crawler": "^6.0",
+        "symfony/css-selector": "^6.2",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
